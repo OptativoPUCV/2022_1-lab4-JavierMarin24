@@ -103,7 +103,7 @@ while(map->buckets[aux] != NULL)
     aux++;
     if(aux==map->capacity)
     {
-      aux=0;
+      break;
     }
   }
 }

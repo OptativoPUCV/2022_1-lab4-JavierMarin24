@@ -703,3 +703,17 @@ hashmap.c:92:5: error: variable ‘aux’ set but not used [-Werror=unused-but-s
 cc1: all warnings being treated as errors
 Compilation failed
 88795e0
+Sat Apr  9 22:40:57 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:94:1: error: expected ‘;’ before ‘while’
+ while(map->buckets[aux] != NULL)
+ ^~~~~
+hashmap.c:92:5: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+ int aux;
+     ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+2fe9847
