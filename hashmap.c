@@ -107,6 +107,7 @@ int aux;
       {
         aux=0;
       }
+      map->current = aux;
 
     }
   return NULL;
