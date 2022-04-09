@@ -91,7 +91,7 @@ HashMap * createMap(long capacity) {
 void eraseMap(HashMap * map,  char * key) {    
 int aux;
   aux=hash(key, map->capacity)
-while(map->buckets[aux] != NULL)
+while(map->buckets[aux] != NULL && map->buckets[aux]->key != NULL)
   {
     if(is_equal(map->buckets[aux]->key, key) == 1)
     {
