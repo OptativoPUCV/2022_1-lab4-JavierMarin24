@@ -2,3 +2,23 @@ Sat Apr  9 16:49:25 UTC 2022:
  tests:  0|6
 total_score: 0/70
 c8a0d00
+Sat Apr  9 16:56:45 UTC 2022: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:41: error: expected ‘)’ before ‘;’ token
+   mapa=(HashMap*) malloc(sizeof(HashMap);
+                                         ^
+hashmap.c:63:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+hashmap.c:56:12: error: variable ‘mapa’ set but not used [-Werror=unused-but-set-variable]
+   HashMap* mapa;
+            ^~~~
+hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+35c351b
