@@ -168,3 +168,23 @@ hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 5b638f1
+Sat Apr  9 17:07:34 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:3: error: invalid type argument of unary ‘*’ (have ‘HashMap {aka struct HashMap}’)
+   *mapa=(HashMap*) malloc(sizeof(HashMap);
+   ^~~~~
+hashmap.c:57:42: error: expected ‘)’ before ‘;’ token
+   *mapa=(HashMap*) malloc(sizeof(HashMap);
+                                          ^
+hashmap.c:63:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+41870b5
