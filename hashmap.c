@@ -55,9 +55,8 @@ HashMap * createMap(long capacity) {
 
   HashMap *mapa;
   mapa=(HashMap*) malloc(sizeof(HashMap);
-    mapa->capacity=capacity;
-
-  mapa->buckets=(Pair*)malloc(mapa->capacity*sizeof(Pair));
+  mapa->capacity=capacity;
+  mapa->buckets=(Pair*)calloc(mapa->capacity,sizeof(Pair));
   mapa->size=0;
   mapa->current=-1;
     return mapa;
