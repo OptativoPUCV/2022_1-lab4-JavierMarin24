@@ -52,7 +52,7 @@ void insertMap(HashMap * map, char * key, void * value)
       aux_posicion++;
       if(aux_posicion==map->capacity)
       {
-        aux_posicion=0;//aux_posicion % map->capacity;
+        aux_posicion=0;
       }
     }
   
@@ -89,8 +89,22 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
-
+int aux;
+  aux=hash(key, map->capacity)
+while(map->buckets[aux] != NULL)
+  {
+    if(is_equal(map->buckets[aux]->key, key) == 1)
+    {
+      map->buckets[aux]->key = NULL;
+      map->size--;
+      break;
+    }
+    aux++;
+    if(aux==map->capacity)
+    {
+      aux=0;
+    }
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   

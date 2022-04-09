@@ -661,3 +661,17 @@ Sat Apr  9 22:20:15 UTC 2022:
  tests:  8|3
 total_score: 40/70
 221fa83
+Sat Apr  9 22:33:29 UTC 2022: 
+ hashmap.c | 20 +++++++++++++++++---
+ 1 file changed, 17 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:94:1: error: expected ‘;’ before ‘while’
+ while(map->buckets[aux] != NULL)
+ ^~~~~
+hashmap.c:92:5: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+ int aux;
+     ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+ae1037f
