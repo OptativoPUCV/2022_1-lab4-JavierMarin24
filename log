@@ -22,3 +22,26 @@ hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 35c351b
+Sat Apr  9 16:57:22 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:41: error: expected ‘)’ before ‘;’ token
+   mapa=(HashMap*) malloc(sizeof(HashMap);
+                                         ^
+hashmap.c:57:7: error: incompatible types when assigning to type ‘HashMap {aka struct HashMap}’ from type ‘HashMap * {aka struct HashMap *}’
+   mapa=(HashMap*) malloc(sizeof(HashMap);
+       ^
+hashmap.c:63:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+hashmap.c:56:11: error: variable ‘mapa’ set but not used [-Werror=unused-but-set-variable]
+   HashMap mapa;
+           ^~~~
+hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+5a30876
