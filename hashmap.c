@@ -40,32 +40,35 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-  int aux_clave;
+  int aux_posicion;
   aux_posicion = hash(key, map->capacity);
-  for(int i= 0 ; i<map->size-1 ; i++)
-    {
-      if(map->buckets[aux_posicion]->new->key == key) return;
-    }
-  if(map->buckets[aux_posicion]==NULL)
+  while(map->buckets[aux_posicion] != NULL && map->buckets[aux_posicion]->key != NULL)
   {
-    map->buckets[aux_posicion]->new->key=key;
-    map->buckets[aux_posicion]->new->value=value;
-    map->current=aux_posicion;
-    map->size++;
-    break;
-  }
-  for(aux_posicion; aux_posicion<(map->size-1) ; aux_posicion++)
-    {
-      if(map->buckets[aux_posicion]==NULL || map->buckets[aux_posicion]->new->key == NULL)
-      {
-        map->buckets[aux_posicion]->new->key=key;
-        map->buckets[aux_posicion]->new->value=value;
-        map->current=aux_posicion;
-        map->size++;
+    
+      if(is_equal(map->buckets[aux_posicion]->key, key) == 1){
         break;
-        
+       }
+      aux_posicion++;
+      if(aux_posicion==map->capacity)
+      {
+        aux_posicion=aux_posicion % map->capacity;
       }
     }
+  
+  if(map->buckets[aux_posicion] != NULL)
+  {
+    map->buckets[aux_posicion]->key=key;
+    map->buckets[aux_posicion]->value=value;
+    map->current=aux_posicion;
+    map->size++;
+    break; 
+  }
+  else
+  {
+    map->buckets[aux_posicion] = createPair(key, value);
+    map->size++;
+  }
+}
   
 
 }
