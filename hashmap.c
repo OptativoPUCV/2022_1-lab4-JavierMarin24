@@ -59,7 +59,7 @@ HashMap * createMap(long capacity) {
   mapa->size=0;
   mapa->capacity=capacity;
   mapa->current=-1;
-  mapa->buckets=(Pair*)calloc(mapa->capacity,sizeof(Pair));
+  mapa->buckets=(Pair*)calloc(capacity,sizeof(Pair));
     return mapa;
 }
 
