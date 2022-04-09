@@ -66,7 +66,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->buckets[aux_posicion]->value=value;
     map->current=aux_posicion;
     map->size++;
-    break; 
+    
   }
   else
   {

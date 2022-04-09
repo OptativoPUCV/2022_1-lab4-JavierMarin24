@@ -573,3 +573,22 @@ hashmap.c:90:17: error: assignment from incompatible pointer type [-Werror=incom
 cc1: all warnings being treated as errors
 Compilation failed
 fc05b11
+Sat Apr  9 21:29:37 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:59:36: error: expected expression before ‘%’ token
+         aux_posicion=aux_posicion %% map->capacity;
+                                    ^
+hashmap.c: At top level:
+hashmap.c:79:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+hashmap.c: In function ‘createMap’:
+hashmap.c:90:17: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+    mapa->buckets=(Pair*)calloc(capacity,sizeof(Pair));
+                 ^
+cc1: all warnings being treated as errors
+Compilation failed
+1832c27
