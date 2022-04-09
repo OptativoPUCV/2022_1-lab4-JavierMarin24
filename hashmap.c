@@ -100,6 +100,7 @@ int aux;
     {
        if(is_equal(map->buckets[aux]->key, key) == 1)
        {
+             map->current = aux;
              return map->buckets[aux];
        }
       aux++;
@@ -107,7 +108,7 @@ int aux;
       {
         aux=0;
       }
-      map->current = aux;
+      
 
     }
   return NULL;
