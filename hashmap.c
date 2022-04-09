@@ -41,35 +41,7 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) 
 {
-  long clave = hash(key, map->capacity);
-  //float porcentaje;
-  map->size = map->size + 1;
-  //porcentaje = (map->size / map->capacity);
-
-  /*if (porcentaje > 0.70)
-  {
-    enlarge(map);
-  }*/
-
-  while (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
-  {
-    if (is_equal(key, map->buckets[clave]->key) == 1)
-    {
-        break;
-    }
-    clave = (clave + 1) % map->capacity;//Se recorre el arrgelo circular
-  }
-  if (map->buckets[clave] != NULL)
-  {
-    map->buckets[clave]->key = key;
-    map->buckets[clave]->value = value;
-  }
-  else
-  {
-    map->buckets[clave] = createPair(key, value);
-  }
-}
-  /*int aux_posicion;
+  int aux_posicion;
   //float cantidad_de_memoria;
   aux_posicion = hash(key, map->capacity);
  // cantidad_de_memoria= (map->size / map->capacity);
@@ -102,7 +74,7 @@ void insertMap(HashMap * map, char * key, void * value)
     map->buckets[aux_posicion] = createPair(key, value);
     map->size++;
   }
-}*/
+}
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
@@ -113,7 +85,7 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) {
   HashMap *mapa=(HashMap*) malloc(sizeof(HashMap));
-   mapa->buckets=(Pair*)calloc(capacity,sizeof(Pair));
+   mapa->buckets=(Pair**)calloc(capacity,sizeof(Pair*));
   mapa->size=0;
   mapa->capacity=capacity;
   mapa->current=-1;
