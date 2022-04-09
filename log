@@ -614,3 +614,14 @@ hashmap.c:88:17: error: assignment from incompatible pointer type [-Werror=incom
 cc1: all warnings being treated as errors
 Compilation failed
 374b18a
+Sat Apr  9 21:34:38 UTC 2022: 
+ hashmap.c | 32 ++++++++++++++++++++++++++++++--
+ 1 file changed, 30 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:116:17: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+    mapa->buckets=(Pair*)calloc(capacity,sizeof(Pair));
+                 ^
+cc1: all warnings being treated as errors
+Compilation failed
+5ae1d0c
