@@ -138,6 +138,7 @@ int i=0;
     {
       if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
       {
+        map->current=i;
         return map->buckets[i];
       }
       i++;
@@ -146,6 +147,6 @@ int i=0;
 }
 
 Pair * nextMap(HashMap * map) {
-
+    return(map->buckets[map->current +1]);
     return NULL;
 }
