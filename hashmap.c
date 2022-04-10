@@ -80,19 +80,19 @@ void enlarge(HashMap * map) {
   {
     if (map->buckets[k] != NULL && map->buckets[k]->key != NULL)
     {
-      bucket_anterior[k] = createPair(map->buckets[i]->key, map->buckets[k]->value); 
+      bucket_anterior[k] = createPair(map->buckets[k]->key, map->buckets[k]->value); 
     }
   }
   
-  Pair** Bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
+  Pair** bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
   map->buckets = bucket_doble;
   int i = 0;
   while(i<map->capacity)
     {
-      if (oldBucket[i] != NULL && oldBucket[i]->key != NULL)
-    {
-      insertMap(map,bucket_anterior[i]->key, bucket_anterior[i]->value); 
-    }
+      if (bucket_doble[i] != NULL && bucket_doble[i]->key != NULL)
+      {
+        insertMap(map,bucket_anterior[i]->key, bucket_anterior[i]->value); 
+      }
       i++;
     }
 }

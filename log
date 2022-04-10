@@ -847,3 +847,8 @@ hashmap.c:87:10: error: unused variable ‘Bucket_doble’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 ff168de
+Sun Apr 10 01:01:15 UTC 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  0|0
+0204e13
