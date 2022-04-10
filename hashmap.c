@@ -73,7 +73,7 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map) {
   enlarge_called = 1; 
-  
+  map->size = 0;
   Pair** bucket_anterior = (Pair**) calloc (map->capacity, sizeof(Pair*));
   for (int k = 0 ; k < map->capacity ; k++)
   {
@@ -87,7 +87,7 @@ void enlarge(HashMap * map) {
   
   
   map->buckets = bucket_doble;
-  map->size = 0;
+  
    
   int i = 0;
   while(i<(map->capacity/2))
