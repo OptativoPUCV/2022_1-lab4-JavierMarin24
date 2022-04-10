@@ -133,7 +133,15 @@ int aux;
 }
 
 Pair * firstMap(HashMap * map) {
-
+int i=0;
+  while(i<map->capacidad)
+    {
+      if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+      {
+        return map->buckets[i];
+      }
+      i++;
+    }
     return NULL;
 }
 

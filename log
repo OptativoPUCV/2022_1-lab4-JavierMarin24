@@ -751,3 +751,14 @@ Sun Apr 10 00:03:41 UTC 2022:
  tests:  11|2
 total_score: 50/70
 a5acb9a
+Sun Apr 10 00:13:42 UTC 2022: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:137:16: error: ‘HashMap {aka struct HashMap}’ has no member named ‘capacidad’; did you mean ‘capacity’?
+   while(i<map->capacidad)
+                ^~~~~~~~~
+                capacity
+Compilation failed
+2fe5dc0
