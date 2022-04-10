@@ -82,10 +82,10 @@ void enlarge(HashMap * map) {
       bucket_anterior[k] = createPair(map->buckets[k]->key, map->buckets[k]->value); 
     }
   }
-  
+  map->capacity =  map->capacity * 2 ;
   Pair** bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
   
-  map->capacity =  map->capacity * 2 ;
+  
   map->buckets = bucket_doble;
   map->size = 0;
    
