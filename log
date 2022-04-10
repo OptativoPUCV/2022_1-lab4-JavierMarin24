@@ -825,3 +825,25 @@ hashmap.c:87:10: error: unused variable ‘Bucket_doble’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 1c661fa
+Sun Apr 10 00:48:45 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:83:52: error: ‘i’ undeclared (first use in this function)
+       bucket_anterior[k] = createPair(map->buckets[i]->key, map->buckets[k]->value);
+                                                    ^
+hashmap.c:83:52: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:88:18: error: ‘bucket_doble’ undeclared (first use in this function); did you mean ‘Bucket_doble’?
+   map->buckets = bucket_doble;
+                  ^~~~~~~~~~~~
+                  Bucket_doble
+hashmap.c:92:11: error: ‘oldBucket’ undeclared (first use in this function)
+       if (oldBucket[i] != NULL && oldBucket[i]->key != NULL)
+           ^~~~~~~~~
+hashmap.c:87:10: error: unused variable ‘Bucket_doble’ [-Werror=unused-variable]
+   Pair** Bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
+          ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ff168de
