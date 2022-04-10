@@ -147,6 +147,20 @@ int i=0;
 }
 
 Pair * nextMap(HashMap * map) {
-    return(map->buckets[map->current +1]);
-    return NULL;
+  int aux = map->current;
+   while(aux < map->capacity)
+  {
+    if (map->buckets[aux] != NULL && map->buckets[aux]->key != NULL && aux != map->current)
+    {
+      map->current = aux;
+      return map->buckets[aux];
+    }
+    aux++;
+    if(aux == map->capacity)
+      {
+        aux=0;
+      }
+  }
+  return NULL;
+    
 }
