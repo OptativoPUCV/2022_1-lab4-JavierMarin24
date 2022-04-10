@@ -92,6 +92,7 @@ void enlarge(HashMap * map) {
       if (bucket_doble[i] != NULL && bucket_doble[i]->key != NULL)
       {
         insertMap(map,bucket_anterior[i]->key, bucket_anterior[i]->value); 
+        map->size++;
       }
       i++;
     }
