@@ -90,7 +90,7 @@ void enlarge(HashMap * map) {
   map->capacity = 2 * map->capacity ;
    
   int i = 0;
-  while(i<map->capacity)
+  while(i<(map->capacity/2))
     {
       if (bucket_anterior[i] != NULL && bucket_anterior[i]->key != NULL)
       {
