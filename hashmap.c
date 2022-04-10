@@ -151,16 +151,12 @@ Pair * nextMap(HashMap * map) {
    while(aux < map->capacity)
   {
     if (map->buckets[aux] != NULL && map->buckets[aux]->key != NULL && aux != map->current)
-    {
-      map->current = aux;
-      return map->buckets[aux];
-    }
-    aux++;
-    if(aux == map->capacity)
       {
-        aux=0;
+        map->current = aux;
+        return map->buckets[aux];
       }
-  }
-  //return NULL;
+    aux++;
     
+  }
+  return NULL; 
 }
