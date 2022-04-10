@@ -803,3 +803,25 @@ Sun Apr 10 00:40:11 UTC 2022:
  tests:  17|0
 total_score: 70/70
 301eb1c
+Sun Apr 10 00:45:47 UTC 2022: 
+ hashmap.c | 25 +++++++++++++------------
+ 1 file changed, 13 insertions(+), 12 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:83:52: error: ‘i’ undeclared (first use in this function)
+       bucket_anterior[k] = createPair(map->buckets[i]->key, map->buckets[k]->value);
+                                                    ^
+hashmap.c:83:52: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:88:18: error: ‘bucket_doble’ undeclared (first use in this function); did you mean ‘Bucket_doble’?
+   map->buckets = bucket_doble;
+                  ^~~~~~~~~~~~
+                  Bucket_doble
+hashmap.c:92:11: error: ‘oldBucket’ undeclared (first use in this function)
+       if (oldBucket[i] != NULL && oldBucket[i]->key != NULL)
+           ^~~~~~~~~
+hashmap.c:87:10: error: unused variable ‘Bucket_doble’ [-Werror=unused-variable]
+   Pair** Bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
+          ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1c661fa
