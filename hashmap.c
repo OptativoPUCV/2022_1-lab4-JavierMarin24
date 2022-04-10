@@ -87,7 +87,7 @@ void enlarge(HashMap * map) {
   
   Pair** bucket_doble = (Pair**) calloc (map->capacity, sizeof(Pair*));
   map->buckets = bucket_doble;
-  map->capacity = 2 * map->capacity ;
+  map->capacity =  map->capacity * 2 ;
    
   int i = 0;
   while(i<(map->capacity/2))
